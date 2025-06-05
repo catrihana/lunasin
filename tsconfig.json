@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": false,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "Config/*": ["config/*"],
+      "Types/*": ["types/*"],
+      "Interfaces/*": ["interfaces/*"],
+      "Styles/*": ["styles/*"],
+      "Hooks/*": ["hooks/*"],
+      "Utils/*": ["src/utils/*"],
+      "Contexts/*": ["src/contexts/*"],
+      "Services/*": ["src/services/*"],
+      "Constants/*": ["src/constants/*"],
+      "Pages/*": ["pages/*"],
+      "Components/atoms": ["components/atoms"],
+      "Components/molecules": ["components/molecules"],
+      "Components/organisms": ["components/organisms"],
+      "Components/templates": ["components/templates"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "types.d.ts",
+    "__test__/pages/resetPassword.spec.tsx",
+    "__test__/components/atoms/card.spec.tsx"
+  ],
+  "exclude": ["node_modules"],
+  "typeRoots": ["node_modules/@types", "@types"]
+}
