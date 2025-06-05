@@ -18,7 +18,7 @@ const SideBarMenuItem = ({ data }: any) => {
         <div className="text-paletteText-primary space-y-2 text-xs whitespace-normal  ">
           {menus.map((el: any, key: number) => {
             return (
-              <Link className={el.className} href={el.path} passHref key={key}>
+              <div className={el.className} key={key}>
                 <div className="flex justify-between items-center cursor-pointer">
                   <div className="flex gap-2">
                     <span
@@ -39,7 +39,7 @@ const SideBarMenuItem = ({ data }: any) => {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>
