@@ -54,7 +54,7 @@ const InputUploadNSFPModal = ({
           }
           if (!data?.success) {
             toast.error(data?.message, {
-              position: 'top-center',
+              position: 'bottom-center',
               hideProgressBar: true,
               autoClose: 2500,
             });
@@ -64,7 +64,7 @@ const InputUploadNSFPModal = ({
           const { data } = response ?? {};
           setIsLoading(false);
           toast.error(data?.message, {
-            position: 'top-center',
+            position: 'bottom-center',
             hideProgressBar: true,
             autoClose: 2500,
           });
