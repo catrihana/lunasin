@@ -17,7 +17,7 @@ export const data = {
     {
       term: 'TOP 14',
       average: 12,
-      overdue_percentage: 6.40,
+      overdue_percentage: 6.4,
       _id: '6834f98a1938ef43a54cb121',
     },
     {

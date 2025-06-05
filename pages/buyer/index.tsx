@@ -1,4 +1,5 @@
 import Layout from 'components/Layouts';
+import LoadingModal from 'components/LoadingModal';
 import InputUploadNSFPModal from 'components/pages/buyer/Modal/UploadModal';
 import ProcessTransaction from 'components/pages/buyer/process-transaction';
 import SectionDashboardRFQ from 'components/pages/buyer/SectionDashboardRFQ';
@@ -7,7 +8,11 @@ import SideBarMenu from 'components/SideBarMenu';
 import { useState } from 'react';
 
 export default function Buyer() {
-  const [isOpen, setIsOpen] = useState<any>({ show: false, val: '' });
+  const [isOpen, setIsOpen] = useState<{ show: boolean; val: string }>({
+    show: false,
+    val: '',
+  });
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   return (
     <Layout customClass="!bg-[#F6F9FC]">
@@ -27,7 +32,12 @@ export default function Buyer() {
           <SectionDashboardRFQ />
         </div>
       </div>
-      <InputUploadNSFPModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <InputUploadNSFPModal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        setIsLoading={setIsLoading}
+      />
+      <LoadingModal isOpen={isLoading} />
     </Layout>
   );
 }

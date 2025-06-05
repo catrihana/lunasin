@@ -16,11 +16,13 @@ interface IsOpenProps {
 interface InputUploadNSFPModalProps {
   isOpen: IsOpenProps;
   setIsOpen: (value: IsOpenProps) => void;
+  setIsLoading: (value: boolean) => void;
 }
 
 const InputUploadNSFPModal = ({
   isOpen,
   setIsOpen,
+  setIsLoading,
 }: InputUploadNSFPModalProps) => {
   const [errorFile, setErrorFile] = useState<any>();
   const [thumbnail, setThumbnail] = useState<any>(null);
@@ -39,8 +41,10 @@ const InputUploadNSFPModal = ({
     isOpen.val && dataForm.append('invoice_number', isOpen?.val);
     values?.upload && dataForm.append('image', values?.upload);
     if (!errorFile) {
+      setIsLoading(true);
       mutation.mutate(dataForm, {
         onSuccess: ({ data }) => {
+          setIsLoading(false);
           if (data?.success) {
             toast.success(data?.message, {
               position: 'bottom-center',
@@ -58,6 +62,7 @@ const InputUploadNSFPModal = ({
         },
         onError: ({ response }: any) => {
           const { data } = response ?? {};
+          setIsLoading(false);
           toast.error(data?.message, {
             position: 'top-center',
             hideProgressBar: true,
