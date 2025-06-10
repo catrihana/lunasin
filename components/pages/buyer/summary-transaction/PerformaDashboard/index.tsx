@@ -3,6 +3,7 @@ import { BiUpArrowAlt } from 'react-icons/bi';
 import { IoInformationCircleOutline } from 'react-icons/io5';
 import CardDashboard from '../../CardDashboard';
 import Good from 'public/static/good.svg';
+import { Image } from '@mantine/core';
 
 const PerformaDashboard = ({ data }: any) => {
   const handleTopValue = (item: any) => {
@@ -35,9 +36,9 @@ const PerformaDashboard = ({ data }: any) => {
         </div>
       </div>
       <hr />
-      <div className="py-[54px] px-4 flex">
+      <div className="py-[54px] px-4 sm:flex sm:justify-center">
         <div className="space-y-4 items-center flex flex-col max-w-[200px] max-h-[199px] mr-4">
-          <img src={data?.image || Good.src} alt="performa" />
+          <Image src={data?.image || Good.src} alt="performa" />
         </div>
         <div>
           <div>

@@ -36,6 +36,5 @@ const lateDays = (val: any) => {
       : `${remainValue} Lagi`;
 };
 
-export { thTable, menu, lateDays };
-
-export default () => {};
+const constants = { thTable, menu, lateDays };
+export default constants;

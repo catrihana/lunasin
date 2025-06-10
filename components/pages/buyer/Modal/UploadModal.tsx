@@ -13,17 +13,19 @@ interface IsOpenProps {
   val: string;
 }
 
-interface InputUploadNSFPModalProps {
+interface UploadModalProps {
   isOpen: IsOpenProps;
   setIsOpen: (value: IsOpenProps) => void;
   setIsLoading: (value: boolean) => void;
+  setIsSuccess: (value: boolean) => void;
 }
 
-const InputUploadNSFPModal = ({
+const UploadModal = ({
   isOpen,
   setIsOpen,
   setIsLoading,
-}: InputUploadNSFPModalProps) => {
+  setIsSuccess,
+}: UploadModalProps) => {
   const [errorFile, setErrorFile] = useState<any>();
   const [thumbnail, setThumbnail] = useState<any>(null);
 
@@ -46,11 +48,7 @@ const InputUploadNSFPModal = ({
         onSuccess: ({ data }) => {
           setIsLoading(false);
           if (data?.success) {
-            toast.success(data?.message, {
-              position: 'bottom-center',
-              hideProgressBar: true,
-              autoClose: 2000,
-            });
+            setIsSuccess(true);
           }
           if (!data?.success) {
             toast.error(data?.message, {
@@ -127,4 +125,4 @@ const InputUploadNSFPModal = ({
   );
 };
 
-export default InputUploadNSFPModal;
+export default UploadModal;

@@ -1,6 +1,7 @@
 import Layout from 'components/Layouts';
 import LoadingModal from 'components/LoadingModal';
-import InputUploadNSFPModal from 'components/pages/buyer/Modal/UploadModal';
+import SuccessModal from 'components/pages/buyer/Modal/SuccessModal';
+import UploadModal from 'components/pages/buyer/Modal/UploadModal';
 import ProcessTransaction from 'components/pages/buyer/process-transaction';
 import SectionDashboardRFQ from 'components/pages/buyer/SectionDashboardRFQ';
 import SummaryTransaction from 'components/pages/buyer/summary-transaction';
@@ -13,6 +14,7 @@ export default function Buyer() {
     val: '',
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   return (
     <Layout customClass="!bg-[#F6F9FC]">
@@ -32,11 +34,13 @@ export default function Buyer() {
           <SectionDashboardRFQ />
         </div>
       </div>
-      <InputUploadNSFPModal
+      <UploadModal
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         setIsLoading={setIsLoading}
+        setIsSuccess={setIsSuccess}
       />
+      <SuccessModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
       <LoadingModal isOpen={isLoading} />
     </Layout>
   );

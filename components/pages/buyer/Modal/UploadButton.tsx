@@ -1,8 +1,6 @@
 import { useRef } from 'react';
 import { HiOutlineDocument } from 'react-icons/hi2';
 import { IoMdClose } from 'react-icons/io';
-// import P12Logo from 'public/assets/icon/doc-p12.svg';
-// import { Image } from '@mantine/core';
 
 type UploadButtonProps = {
   errorFile: string;
@@ -68,9 +66,9 @@ const UploadButton = ({
                     size={20}
                     className="cursor-pointer text-[#444B55]"
                     onClick={() => {
-                      setValue('upload', null); // Reset value in form
+                      setValue('upload', null);
                       setThumbnail(null);
-                      setErrorFile('File harus diisi'); // Set error message
+                      setErrorFile('File harus diisi');
                     }}
                   />
                 </div>

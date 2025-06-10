@@ -1,5 +1,5 @@
 import { GoShareAndroid } from 'react-icons/go';
-import { menu, thTable } from './constant';
+import constants from './constant';
 import DataTransaction from './DataTransaction';
 import CardDashboard from '../CardDashboard';
 import { useState } from 'react';
@@ -8,6 +8,7 @@ import { dashboardListPayment } from 'Constants/summary-transaction';
 
 const ProcessTransaction = ({ isOpen }: any) => {
   const status = 'OVERDUE';
+  const { menu, thTable } = constants;
   const [pageNumber, setPageNumber] = useState<any>(1);
   const onChangePage = (page: any) => {
     setPageNumber(page.currentPage);

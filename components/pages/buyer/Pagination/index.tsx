@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const LEFT_PAGE = 'LEFT';
@@ -39,26 +39,29 @@ const Pagination = ({
 }: PaginationType) => {
   const totalPages = Math.ceil(totalRecords / pageLimit);
 
-  const gotoPage = (page: any) => {
-    let currPage = Math.max(0, Math.min(page, totalPages));
+  const gotoPage = useCallback(
+    (page: any) => {
+      let currPage = Math.max(0, Math.min(page, totalPages));
 
-    if (page < 1) {
-      currPage = 1;
-    }
+      if (page < 1) {
+        currPage = 1;
+      }
 
-    const paginationData = {
-      currentPage: currPage,
-      totalPages: totalPages,
-      pageLimit: pageLimit,
-      totalRecords: totalRecords,
-    };
+      const paginationData = {
+        currentPage: currPage,
+        totalPages,
+        pageLimit,
+        totalRecords,
+      };
 
-    onPageChanged(paginationData);
-  };
+      onPageChanged(paginationData);
+    },
+    [totalPages, pageLimit, totalRecords, onPageChanged],
+  );
 
   useEffect(() => {
     isReset && gotoPage(1);
-  }, []);
+  }, [isReset, gotoPage]);
 
   const handleClick = (page: any, evt: any) => {
     evt.preventDefault();
@@ -69,29 +72,13 @@ const Pagination = ({
   const handleMoveLeft = (evt: any) => {
     evt.preventDefault();
     !customResetFocusView && window.scrollTo({ top: 0, behavior: 'smooth' });
-    // gotoPage(currentPage - pageNeighbours * 2 - 1);
     gotoPage(currentPage - 1);
-  };
-
-  const handleMoveLeftThreePage = (evt: any) => {
-    evt.preventDefault();
-    !customResetFocusView && window.scrollTo({ top: 0, behavior: 'smooth' });
-    // gotoPage(currentPage - pageNeighbours * 2 - 1);
-    gotoPage(currentPage - 3);
   };
 
   const handleMoveRight = (evt: any) => {
     evt.preventDefault();
     !customResetFocusView && window.scrollTo({ top: 0, behavior: 'smooth' });
-    // gotoPage(currentPage + pageNeighbours * 2 + 1);
     gotoPage(currentPage + 1);
-  };
-
-  const handleMoveRightThreePage = (evt: any) => {
-    evt.preventDefault();
-    !customResetFocusView && window.scrollTo({ top: 0, behavior: 'smooth' });
-    // gotoPage(currentPage + pageNeighbours * 2 + 1);
-    gotoPage(currentPage + 3);
   };
 
   const fetchPageNumbers = () => {

@@ -49,7 +49,17 @@ export default function DoughnutChart(props: any) {
         chartInstance.current.destroy();
       }
     };
-  }, []);
+  }, [
+    props?.bgColor,
+    props?.borderWidth,
+    props?.color,
+    props?.data,
+    props?.labels,
+    props?.size,
+    props?.text,
+    props?.type,
+    props?.weight,
+  ]);
 
   return (
     <div>
