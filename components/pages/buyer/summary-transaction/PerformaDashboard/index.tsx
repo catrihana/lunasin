@@ -36,8 +36,8 @@ const PerformaDashboard = ({ data }: any) => {
         </div>
       </div>
       <hr />
-      <div className="py-[54px] px-4 sm:flex sm:justify-center">
-        <div className="space-y-4 items-center flex flex-col max-w-[200px] max-h-[199px] mr-4">
+      <div className="py-[54px] px-4 sm:flex">
+        <div className="space-y-4 items-center flex flex-col max-w-[200px] max-h-[199px] mr-4 sm:justify-normal justify-self-center">
           <Image src={data?.image || Good.src} alt="performa" />
         </div>
         <div>
