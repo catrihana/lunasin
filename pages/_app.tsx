@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Themes>
       <Head>
-        <title>Solution Center | PaDi UMKM</title>
+        <title>Padi Lunasin</title>
       </Head>
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />

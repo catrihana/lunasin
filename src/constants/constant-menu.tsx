@@ -81,9 +81,9 @@ const DASHBOARD_MENU: DashboardMenu = [
       {
         label: 'Dashboard',
         name: 'transaction-dashboard',
-        path: '/dashboard/transaction-dashboard',
+        path: '/buyer',
         notification: null,
-        icon: <DashboardIcon path="/dashboard/transaction-dashboard" />,
+        icon: <DashboardIcon path="/buyer" />,
         roleAccess: [
           'buyer-staff',
           'buyer-manager',
@@ -103,9 +103,9 @@ const DASHBOARD_MENU: DashboardMenu = [
       {
         label: 'Profil',
         name: 'profile',
-        path: '/dashboard/profile',
+        path: '/seller',
         notification: null,
-        icon: <ProfileIcon path="/dashboard/profile" />,
+        icon: <ProfileIcon path="/seller" />,
         roleAccess: [
           'buyer-retail',
           'buyer-staff',

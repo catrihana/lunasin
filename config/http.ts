@@ -15,12 +15,9 @@ const isTokenExpiringSoon = (
 
 const refreshAccessToken = async () => {
   try {
-    const response = await axios.post(
-      `${Service.API}/solution-center/user/refresh`,
-      {
-        refresh: refreshToken(),
-      },
-    );
+    const response = await axios.post(`${Service.API}/user/refresh`, {
+      refresh: refreshToken(),
+    });
 
     const { data: resultData } = response?.data;
     setToken(resultData?.accessToken, resultData?.refreshToken);
