@@ -29,7 +29,6 @@ type SideMenuProps = {
 
 const SideMenu = ({ isOpen }: SideMenuProps) => {
   const router = useRouter();
-  const [menuRFQAvailable, setMenuRFQAvailable] = useState(false);
   const token = nookies.get()?.access_token;
 
   // collapse menu state
@@ -41,7 +40,6 @@ const SideMenu = ({ isOpen }: SideMenuProps) => {
   const [settingsRoute, setSettingsRoute] = useState('/settings');
   const [productRoute, setProductRoute] = useState('/product');
   const [addProductRoute, setAddProductRoute] = useState('/add-product');
-  const lengkapiDataRoute = '/company-data-form';
 
   const menu = [
     {
@@ -217,8 +215,8 @@ const SideMenu = ({ isOpen }: SideMenuProps) => {
         </div>
         <div
           className="flex px-4 cursor-pointer hover:text-secondary-70"
-          onClick={() => router.push('/')}>
-          {window.location.pathname === '/dashboard' && (
+          onClick={() => window.location.assign('/buyer')}>
+          {window.location.pathname === '/buyer' && (
             <div className="border rounded w-[8px] bg-secondary-70 ml-[-12px] mr-1"></div>
           )}
           <div className="items-center flex space-x-2">
