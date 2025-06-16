@@ -25,26 +25,14 @@ const DataTransaction = ({ data, isOpen }: any) => {
       <td className="text-sm text-gray-900 font-normal p-4 whitespace-nowrap w-1/4">
         {priceFormat(val?.price_total) ?? '-'}
       </td>
-      <td className="text-sm text-gray-900 font-normal p-4 whitespace-nowrap w-1/4">
-        {val?.invoice_date
-          ? `${moment(val?.invoice_date).format('DD MMM YYYY, H:mm')} WIB`
-          : '-'}
+      <td className="text-sm text-gray-900 font-normal p-4 whitespace-nowrap w-1/4 capitalize">
+        {val?.by ?? '-'}
       </td>
       <td className="text-sm text-gray-900 font-normal p-4 whitespace-nowrap w-1/4">
-        {val?.due_at
-          ? `${moment(val?.due_at).format('DD MMM YYYY, H:mm')} WIB`
-          : '-'}
+        {val?.status ?? '-'}
       </td>
       <td className="space-x-1 flex text-sm text-[#009EA9] font-medium p-4 whitespace-nowrap w-1/4">
-        {val?.done ? (
-          <Link href={'/ip'} rel="noreferrer noopener" target="_blank">
-            <span>Selesaikan Transaksi</span>
-          </Link>
-        ) : val?.detail ? (
-          <Link href={'/ip'} rel="noreferrer noopener" target="_blank">
-            <span>Lihat Detail Pengajuan</span>
-          </Link>
-        ) : (
+        {val?.status_id === 3 ? (
           <>
             <Link href={'/ip'} rel="noreferrer noopener" target="_blank">
               <span>Invoice</span>
@@ -54,18 +42,26 @@ const DataTransaction = ({ data, isOpen }: any) => {
               <span>Faktur</span>
             </Link>
           </>
-        )}
+        ) : null}
       </td>
       <td className="text-sm font-normal p-4 whitespace-nowrap w-1/4">
-        {val?.detail ? (
-          <div className="text-[#B3B3B3] cursor-not-allowed">
-            Menunggu Pembayaran
-          </div>
-        ) : val?.done ? null : (
+        {val?.status_id === 2 ? (
+          <div className="text-[#B3B3B3] cursor-not-allowed">Menunggu...</div>
+        ) : val?.status_id === 3 ? (
           <div
             onClick={() => isOpen({ show: true, val: val.invoice_number })}
             className="text-[#009EA9] cursor-pointer">
             Unggah Bukti Bayar
+          </div>
+        ) : (
+          <div
+            onClick={() =>
+              val?.by === 'buyer'
+                ? isOpen({ show: true, val: val.invoice_number })
+                : isOpen({ show: true, val: val.invoice_number })
+            }
+            className="text-[#009EA9] cursor-pointer">
+            Setujui
           </div>
         )}
       </td>

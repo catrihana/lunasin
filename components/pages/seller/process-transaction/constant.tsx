@@ -1,10 +1,10 @@
 const thTable = [
   'Nomor Invoice',
-  'Nominal',
-  'Tanggal Invoice',
-  'Tanggal Jatuh Tempo',
+  'Nominal Biaya Transkasi',
+  'Dibebankan Oleh',
+  'Status Pengajuan',
+  '',
   'Aksi',
-  'Pengajuan',
 ];
 
 const menu = [

@@ -13,6 +13,7 @@ import Layout from 'components/pages/seller/Layout';
 import ProcessTransaction from 'components/pages/seller/process-transaction';
 import UploadModal from 'components/pages/buyer/Modal/UploadModal';
 import SuccessModal from 'components/pages/buyer/Modal/SuccessModal';
+import SuccessSellerModal from 'components/pages/seller/Modal/SuccessModal';
 import LoadingModal from 'components/LoadingModal';
 
 const activeCarousel = 0;
@@ -244,6 +245,7 @@ const Dashboard = () => {
           setIsSuccess={setIsSuccess}
         />
         <SuccessModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
+        <SuccessSellerModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
         <LoadingModal isOpen={isLoading} />
       </Layout>
     </div>
