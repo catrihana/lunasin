@@ -19,9 +19,12 @@ const SuccessModal = ({ isOpen, setIsOpen }: SuccessModalProps) => {
         <div className="flex flex-col items-center space-y-[16px]">
           <Image src={General.src} alt="general" maw={300} />
           <div className="text-[#444B55] font-bold">
-           Pengajuan Berhasil Disetujui
+            Pengajuan Berhasil Disetujui
           </div>
-          <div className="text-[#444B55]">Transaksi akan selesai setelah pembeli melakukan pembayaran biaya transkasi</div>
+          <div className="text-[#444B55]">
+            Transaksi akan selesai setelah pembeli melakukan pembayaran biaya
+            transkasi
+          </div>
         </div>
         <div className="flex items-center justify-between space-x-[16px]">
           <Button

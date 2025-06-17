@@ -177,48 +177,84 @@ const Footer = () => {
         <div className="text-xl font-bold">Metode Pembayaran</div>
         <div className="grid md:grid-cols-8 grid-cols-3 items-center space-x-5">
           <div>
-            <Image src={bni.src} alt=""
-            width={80}
-  height={40} fit="cover" className="w-80 h-40 mx-auto" />
+            <Image
+              src={bni.src}
+              alt=""
+              width={80}
+              height={40}
+              fit="cover"
+              className="w-80 h-40 mx-auto"
+            />
           </div>
           <div>
-            <Image src={bri.src} alt=""
-            width={80}
-  height={40} fit="cover" className="w-80 h-40 mx-auto" />
+            <Image
+              src={bri.src}
+              alt=""
+              width={80}
+              height={40}
+              fit="cover"
+              className="w-80 h-40 mx-auto"
+            />
           </div>
           <div>
-            <Image src={mandiri.src} alt=""
-            width={80}
-  height={40} fit="cover" className="w-80 h-40 mx-auto" />
+            <Image
+              src={mandiri.src}
+              alt=""
+              width={80}
+              height={40}
+              fit="cover"
+              className="w-80 h-40 mx-auto"
+            />
           </div>
           <div>
-            <Image src={btn.src} alt=""
-            width={80}
-  height={40} fit="cover" className="w-80 h-40 mx-auto" />
+            <Image
+              src={btn.src}
+              alt=""
+              width={80}
+              height={40}
+              fit="cover"
+              className="w-80 h-40 mx-auto"
+            />
           </div>
           <div>
-            <Image src={qris.src} alt=""
-            width={80}
-  height={40} fit="cover" className="w-80 h-40 mx-auto" />
+            <Image
+              src={qris.src}
+              alt=""
+              width={80}
+              height={40}
+              fit="cover"
+              className="w-80 h-40 mx-auto"
+            />
           </div>
           <div>
-            <Image src={linkAja.src} alt=""
-            width={50}
-  height={40} fit="cover" className="w-80 h-40 mx-auto" />
+            <Image
+              src={linkAja.src}
+              alt=""
+              width={50}
+              height={40}
+              fit="cover"
+              className="w-80 h-40 mx-auto"
+            />
           </div>
           <div>
             <Image
               src={masterCard.src}
               alt=""
               width={62}
-  height={40}
-              fit="cover" className="w-80 h-40 mx-auto"
+              height={40}
+              fit="cover"
+              className="w-80 h-40 mx-auto"
             />
           </div>
           <div>
-            <Image src={visa.src} alt=""
-            width={80}
-  height={40} fit="cover" className="w-80 h-40 mx-auto" />
+            <Image
+              src={visa.src}
+              alt=""
+              width={80}
+              height={40}
+              fit="cover"
+              className="w-80 h-40 mx-auto"
+            />
           </div>
         </div>
       </div>

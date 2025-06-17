@@ -245,7 +245,7 @@ const Dashboard = () => {
           setIsSuccess={setIsSuccess}
         />
         <SuccessModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
-        <SuccessSellerModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
+        {/* <SuccessSellerModal isOpen={isSuccess} setIsOpen={setIsSuccess} /> */}
         <LoadingModal isOpen={isLoading} />
       </Layout>
     </div>

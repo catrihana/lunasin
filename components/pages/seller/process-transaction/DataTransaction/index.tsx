@@ -54,15 +54,7 @@ const DataTransaction = ({ data, isOpen }: any) => {
             Unggah Bukti Bayar
           </div>
         ) : (
-          <div
-            onClick={() =>
-              val?.by === 'buyer'
-                ? isOpen({ show: true, val: val.invoice_number })
-                : isOpen({ show: true, val: val.invoice_number })
-            }
-            className="text-[#009EA9] cursor-pointer">
-            Setujui
-          </div>
+          <div className="text-[#009EA9] cursor-pointer">Setujui</div>
         )}
       </td>
     </tr>
