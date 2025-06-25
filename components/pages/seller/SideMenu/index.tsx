@@ -245,8 +245,8 @@ const SideMenu = ({ isOpen }: SideMenuProps) => {
                               src={menuList.img}
                               alt={`menu ${menuList.label}`}
                               className="mr-2 w-auto h-auto"
-                              width={0}
-                              height={0}
+                              width={24}
+                              height={24}
                             />
                           )}
                           {menuList.label}{' '}

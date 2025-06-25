@@ -19,7 +19,7 @@ const DataTransaction = ({ data, isOpen, setIsSuccess }: any) => {
     <tr
       className={`border-b ${key % 2 === 0 ? 'bg-[#FBFAFF]' : 'bg-white'}`}
       key={key}>
-      <td className="text-sm text-[#009EA9] underline font-normal p-4 whitespace-nowrap w-1/4">
+      <td className="text-sm text-[#009EA9] underline font-semibold p-4 whitespace-nowrap w-1/4">
         #{val?.invoice_number ?? '-'}
       </td>
       <td className="text-sm text-gray-900 font-normal p-4 whitespace-nowrap w-1/4">
@@ -35,9 +35,11 @@ const DataTransaction = ({ data, isOpen, setIsSuccess }: any) => {
           ? `${moment(val?.due_at).format('DD MMM YYYY, H:mm')} WIB`
           : '-'}
       </td>
-      <td className="space-x-1 flex text-sm text-[#009EA9] font-medium p-4 whitespace-nowrap w-1/4">
+      <td className="space-x-1 flex text-sm text-[#009EA9] font-semibold p-4 whitespace-nowrap w-1/4">
         {val?.done ? (
-          <div onClick={() => setIsSuccess('finishedModal')}>
+          <div
+            className="cursor-pointer"
+            onClick={() => setIsSuccess('finishedModal')}>
             <span>Selesaikan Transaksi</span>
           </div>
         ) : val?.detail ? (
@@ -56,7 +58,7 @@ const DataTransaction = ({ data, isOpen, setIsSuccess }: any) => {
           </>
         )}
       </td>
-      <td className="text-sm font-normal p-4 whitespace-nowrap w-1/4">
+      <td className="text-sm font-semibold p-4 whitespace-nowrap w-1/4">
         {val?.detail ? (
           <div className="text-[#B3B3B3] cursor-not-allowed">
             Menunggu Pembayaran

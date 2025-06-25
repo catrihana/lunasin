@@ -45,9 +45,11 @@ const ProcessTransaction = ({ isOpen, setIsSuccess }: any) => {
             <div className="space-y-6">
               <div className="border border-[#2C2C2C] rounded-lg flex flex-col">
                 <div className="flex items-center justify-between space-x-8 m-4">
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-2 items-center">
                     <Image src={General.src} maw={24} mah={24} alt="icons" />
-                    <p>Pengajuan Penyelesaian Transaksi</p>
+                    <p className="font-semibold text-[#0C0C0D]">
+                      Pengajuan Penyelesaian Transaksi
+                    </p>
                   </div>
                   <div>
                     <TextInput
