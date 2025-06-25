@@ -2,8 +2,8 @@ import moment from 'moment';
 import Link from 'next/link';
 import { priceFormat } from 'src/utils/dashboard-buyer';
 
-const DataTransaction = ({ data, isOpen }: any) => {
-  if (data?.orders?.length <= 0 || !data?.orders) {
+const DataTransaction = ({ data, isOpen, setIsSuccess }: any) => {
+  if (!data || data.length === 0) {
     return (
       <tr className="border-b">
         <td
@@ -15,7 +15,7 @@ const DataTransaction = ({ data, isOpen }: any) => {
     );
   }
 
-  return data?.orders?.map((val: any, key: number) => (
+  return data.map((val: any, key: number) => (
     <tr
       className={`border-b ${key % 2 === 0 ? 'bg-[#FBFAFF]' : 'bg-white'}`}
       key={key}>
@@ -54,10 +54,19 @@ const DataTransaction = ({ data, isOpen }: any) => {
             Unggah Bukti Bayar
           </div>
         ) : (
-          <div className="text-[#009EA9] cursor-pointer">Setujui</div>
+          <div
+            onClick={() =>
+              val?.by === 'seller'
+                ? setIsSuccess('inputDataModal')
+                : setIsSuccess('inputDataBuyerModal')
+            }
+            className="text-[#009EA9] cursor-pointer">
+            Setujui
+          </div>
         )}
       </td>
     </tr>
   ));
 };
+
 export default DataTransaction;

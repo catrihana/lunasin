@@ -1,6 +1,11 @@
 import Layout from 'components/Layouts';
 import LoadingModal from 'components/LoadingModal';
+import FinishedByModal from 'components/pages/buyer/Modal/FinishedByModal';
+import FinishedModal from 'components/pages/buyer/Modal/FinishedModal';
+import InputDataModal from 'components/pages/buyer/Modal/InputDataModal';
+import SuccessBuyerProccessModal from 'components/pages/buyer/Modal/SuccessBuyerProccessModal';
 import SuccessModal from 'components/pages/buyer/Modal/SuccessModal';
+import SuccessOnProccessModal from 'components/pages/buyer/Modal/SuccessOnProccessModal';
 import UploadModal from 'components/pages/buyer/Modal/UploadModal';
 import ProcessTransaction from 'components/pages/buyer/process-transaction';
 import SectionDashboardRFQ from 'components/pages/buyer/SectionDashboardRFQ';
@@ -14,7 +19,7 @@ export default function Buyer() {
     val: '',
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<string>('');
 
   return (
     <Layout customClass="!bg-[#F6F9FC]">
@@ -30,7 +35,7 @@ export default function Buyer() {
           <div className="w-full relative">
             <SummaryTransaction />
           </div>
-          <ProcessTransaction isOpen={setIsOpen} />
+          <ProcessTransaction isOpen={setIsOpen} setIsSuccess={setIsSuccess} />
           <SectionDashboardRFQ />
         </div>
       </div>
@@ -41,6 +46,11 @@ export default function Buyer() {
         setIsSuccess={setIsSuccess}
       />
       <SuccessModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
+      <FinishedModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
+      <FinishedByModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
+      <SuccessOnProccessModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
+      <InputDataModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
+      <SuccessBuyerProccessModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
       <LoadingModal isOpen={isLoading} />
     </Layout>
   );

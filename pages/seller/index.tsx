@@ -13,8 +13,11 @@ import Layout from 'components/pages/seller/Layout';
 import ProcessTransaction from 'components/pages/seller/process-transaction';
 import UploadModal from 'components/pages/buyer/Modal/UploadModal';
 import SuccessModal from 'components/pages/buyer/Modal/SuccessModal';
-import SuccessSellerModal from 'components/pages/seller/Modal/SuccessModal';
+import SuccessSellerModal from 'components/pages/seller/Modal/SuccessSellerModal';
 import LoadingModal from 'components/LoadingModal';
+import SuccessSellerProccessModal from 'components/pages/seller/Modal/SuccessSellerProccessModal';
+import InputDataModal from 'components/pages/seller/Modal/InputDataModal';
+import InputDataBuyerModal from 'components/pages/seller/Modal/InputDataBuyerModal';
 
 const activeCarousel = 0;
 
@@ -24,7 +27,7 @@ const Dashboard = () => {
     val: '',
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<string>('');
   const [bannerLeft, setBannerLeft] = useState<any[]>([]);
 
   useEffect(() => {
@@ -179,7 +182,10 @@ const Dashboard = () => {
                   </button>
                 </div>
               </div>
-              <ProcessTransaction isOpen={setIsOpen} />
+              <ProcessTransaction
+                isOpen={setIsOpen}
+                setIsSuccess={setIsSuccess}
+              />
             </div>
             <div className="flex flex-col gap-y-4 w-full xl:max-w-[356px]">
               {bannerDashboard?.right_banner_is_active &&
@@ -245,7 +251,13 @@ const Dashboard = () => {
           setIsSuccess={setIsSuccess}
         />
         <SuccessModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
-        {/* <SuccessSellerModal isOpen={isSuccess} setIsOpen={setIsSuccess} /> */}
+        <SuccessSellerModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
+        <InputDataModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
+        <InputDataBuyerModal isOpen={isSuccess} setIsOpen={setIsSuccess} />
+        <SuccessSellerProccessModal
+          isOpen={isSuccess}
+          setIsOpen={setIsSuccess}
+        />
         <LoadingModal isOpen={isLoading} />
       </Layout>
     </div>

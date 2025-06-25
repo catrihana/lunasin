@@ -2,7 +2,7 @@ import moment from 'moment';
 import Link from 'next/link';
 import { priceFormat } from 'src/utils/dashboard-buyer';
 
-const DataTransaction = ({ data, isOpen }: any) => {
+const DataTransaction = ({ data, isOpen, setIsSuccess }: any) => {
   if (data?.orders?.length <= 0 || !data?.orders) {
     return (
       <tr className="border-b">
@@ -37,9 +37,9 @@ const DataTransaction = ({ data, isOpen }: any) => {
       </td>
       <td className="space-x-1 flex text-sm text-[#009EA9] font-medium p-4 whitespace-nowrap w-1/4">
         {val?.done ? (
-          <Link href={'/ip'} rel="noreferrer noopener" target="_blank">
+          <div onClick={() => setIsSuccess('finishedModal')}>
             <span>Selesaikan Transaksi</span>
-          </Link>
+          </div>
         ) : val?.detail ? (
           <Link href={'/ip'} rel="noreferrer noopener" target="_blank">
             <span>Lihat Detail Pengajuan</span>

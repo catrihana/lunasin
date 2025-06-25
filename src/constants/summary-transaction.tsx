@@ -75,7 +75,7 @@ export const dashboardListPayment = {
   orders: [
     {
       purchase_order_number: 'PO-90000009',
-      invoice_number: 'INVPA-25000080',
+      invoice_number: 'INVPA-12919989',
       price_total: 13298480,
       invoice_date: '2025-04-14T06:52:54.785Z',
       due_at: '2025-05-14T13:52:54Z',
@@ -89,7 +89,7 @@ export const dashboardListPayment = {
     },
     {
       purchase_order_number: 'PO-90000009',
-      invoice_number: 'INVPA-25000080',
+      invoice_number: 'INVPA-12999199',
       price_total: 3078400,
       invoice_date: '2025-04-14T06:48:34.376Z',
       due_at: '2025-05-14T13:48:34Z',
@@ -117,7 +117,7 @@ export const dashboardListPayment = {
     },
     {
       purchase_order_number: 'PO-90000009',
-      invoice_number: 'INVPA-25000080',
+      invoice_number: 'INVPA-89299299',
       price_total: 110813480,
       invoice_date: '2025-02-25T02:16:46.000Z',
       due_at: '2025-03-27T09:16:46Z',
@@ -131,7 +131,7 @@ export const dashboardListPayment = {
     },
     {
       purchase_order_number: 'PO-90000009',
-      invoice_number: 'INVPA-25000080',
+      invoice_number: 'INVPA-21893299',
       price_total: 123125980,
       invoice_date: '2025-02-25T02:16:59.000Z',
       due_at: '2025-03-27T09:16:59Z',
@@ -144,7 +144,7 @@ export const dashboardListPayment = {
     },
     {
       purchase_order_number: 'PO-90000009',
-      invoice_number: 'INVPA-25000080',
+      invoice_number: 'INVPA-67897656',
       price_total: 147750980,
       invoice_date: '2025-02-25T02:17:12.000Z',
       due_at: '2025-03-27T09:17:12Z',
@@ -183,7 +183,7 @@ export const dashboardListPayment = {
     },
     {
       purchase_order_number: 'PO-90000009',
-      invoice_number: 'INVPA-25000080',
+      invoice_number: 'INVPA-78543315',
       price_total: 111000,
       invoice_date: '2025-02-17T02:25:41.158Z',
       due_at: '2025-03-19T09:25:41Z',
@@ -197,7 +197,7 @@ export const dashboardListPayment = {
     },
     {
       purchase_order_number: 'PO-90000009',
-      invoice_number: 'INVPA-25000080',
+      invoice_number: 'INVPA-09129929',
       price_total: 7000000,
       invoice_date: '2025-02-14T08:59:20.224Z',
       due_at: '2025-03-16T15:59:20Z',

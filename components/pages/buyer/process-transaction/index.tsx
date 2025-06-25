@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Pagination from '../Pagination';
 import { dashboardListPayment } from 'Constants/summary-transaction';
 
-const ProcessTransaction = ({ isOpen }: any) => {
+const ProcessTransaction = ({ isOpen, setIsSuccess }: any) => {
   const status = 'OVERDUE';
   const { menu, thTable } = constants;
   const [pageNumber, setPageNumber] = useState<any>(1);
@@ -74,6 +74,7 @@ const ProcessTransaction = ({ isOpen }: any) => {
                                 <DataTransaction
                                   data={dashboardListPayment}
                                   isOpen={isOpen}
+                                  setIsSuccess={setIsSuccess}
                                 />
                               </tbody>
                             </table>

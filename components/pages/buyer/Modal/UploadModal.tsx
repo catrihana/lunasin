@@ -17,7 +17,7 @@ interface UploadModalProps {
   isOpen: IsOpenProps;
   setIsOpen: (value: IsOpenProps) => void;
   setIsLoading: (value: boolean) => void;
-  setIsSuccess: (value: boolean) => void;
+  setIsSuccess: (value: string) => void;
 }
 
 const UploadModal = ({
@@ -48,7 +48,7 @@ const UploadModal = ({
         onSuccess: ({ data }) => {
           setIsLoading(false);
           if (data?.success) {
-            setIsSuccess(true);
+            setIsSuccess('successModal');
           }
           if (!data?.success) {
             toast.error(data?.message, {
